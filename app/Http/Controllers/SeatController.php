@@ -42,6 +42,9 @@ class SeatController extends Controller
         // Determine a seat letter (e.g., Seat A, B, C, D)
         $seatLetters = ['A', 'B', 'C', 'D'];
         $currentUsers = $seat->current_users ?? [];
+        if (is_string($currentUsers)) {
+            $currentUsers = json_decode($currentUsers, true) ?? [];
+        }
         $occupiedCount = count($currentUsers);
         $seatLetter = $seatLetters[$occupiedCount % 4] ?? 'A';
 

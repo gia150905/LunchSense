@@ -3,6 +3,6 @@
         🍔
     </div>
     <span class="font-black text-2xl tracking-tight text-text-main">
-        Smart<span class="text-primary">Lunch</span>
+        Lunch<span class="text-primary">Sense</span>
     </span>
 </div>

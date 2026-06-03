@@ -180,30 +180,9 @@
                         <div class="text-sm font-black" x-text="'RM ' + cartTotal.toFixed(2)"></div>
                     </div>
                 </div>
-                <button type="button" @click="
-                    const form = document.createElement('form');
-                    form.method = 'POST';
-                    form.action = '{{ route('orders.create') }}';
-                    
-                    // Laravel CSRF
-                    const csrf = document.createElement('input');
-                    csrf.type = 'hidden';
-                    csrf.name = '_token';
-                    csrf.value = '{{ csrf_token() }}';
-                    form.appendChild(csrf);
-                    
-                    // Cart Data
-                    const cartInput = document.createElement('input');
-                    cartInput.type = 'hidden';
-                    cartInput.name = 'cart_json';
-                    cartInput.value = JSON.stringify(cart);
-                    form.appendChild(cartInput);
-                    
-                    document.body.appendChild(form);
-                    form.submit();
-                " class="bg-white text-primary font-black text-xs px-6 py-2.5 rounded-full hover:scale-105 active:scale-95 transition shadow-sm">
+                <a href="{{ route('orders.create') }}" class="bg-white text-primary font-black text-xs px-6 py-2.5 rounded-full hover:scale-105 active:scale-95 transition shadow-sm flex items-center justify-center">
                     Checkout Now ➔
-                </button>
+                </a>
             </div>
         </div>
 

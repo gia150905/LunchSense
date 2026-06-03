@@ -20,8 +20,8 @@ class SeatSeeder extends Seeder
             'status' => 'available',
             'zone' => 'Zone A',
             'social_mode' => false,
-            'current_users' => json_encode(['Ali', 'John', 'Abu']),
-            'coordinates' => json_encode(['x' => 1, 'y' => 1])
+            'current_users' => ['Ali', 'John', 'Abu'],
+            'coordinates' => ['x' => 1, 'y' => 1]
         ]);
 
         Seat::create([
@@ -31,8 +31,8 @@ class SeatSeeder extends Seeder
             'status' => 'full',
             'zone' => 'Zone A',
             'social_mode' => false,
-            'current_users' => json_encode(['Lily', 'Zack']),
-            'coordinates' => json_encode(['x' => 1, 'y' => 2])
+            'current_users' => ['Lily', 'Zack'],
+            'coordinates' => ['x' => 1, 'y' => 2]
         ]);
 
         Seat::create([
@@ -42,8 +42,8 @@ class SeatSeeder extends Seeder
             'status' => 'available',
             'zone' => 'Zone A',
             'social_mode' => false,
-            'current_users' => json_encode([]),
-            'coordinates' => json_encode(['x' => 1, 'y' => 3])
+            'current_users' => [],
+            'coordinates' => ['x' => 1, 'y' => 3]
         ]);
 
         // Seed Tables in Zone B
@@ -54,8 +54,8 @@ class SeatSeeder extends Seeder
             'status' => 'available',
             'zone' => 'Zone B',
             'social_mode' => true,
-            'current_users' => json_encode(['Ahmad']),
-            'coordinates' => json_encode(['x' => 2, 'y' => 1])
+            'current_users' => ['Ahmad'],
+            'coordinates' => ['x' => 2, 'y' => 1]
         ]);
 
         Seat::create([
@@ -65,8 +65,8 @@ class SeatSeeder extends Seeder
             'status' => 'cleaning',
             'zone' => 'Zone B',
             'social_mode' => false,
-            'current_users' => json_encode([]),
-            'coordinates' => json_encode(['x' => 2, 'y' => 2])
+            'current_users' => [],
+            'coordinates' => ['x' => 2, 'y' => 2]
         ]);
 
         // Figma specific Table #12
@@ -77,8 +77,8 @@ class SeatSeeder extends Seeder
             'status' => 'available',
             'zone' => 'Zone B',
             'social_mode' => true,
-            'current_users' => json_encode(['Sarah', 'David']),
-            'coordinates' => json_encode(['x' => 2, 'y' => 3])
+            'current_users' => ['Sarah', 'David'],
+            'coordinates' => ['x' => 2, 'y' => 3]
         ]);
     }
 }
