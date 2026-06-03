@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             'password' => Hash::make('password'),
             'role' => 'student',
             'wallet_balance' => 142.50,
-            'active_dietary_tags' => json_encode(['Halal', 'Gluten-Free']),
+            'active_dietary_tags' => ['Halal', 'Gluten-Free'],
             'favorite_cafeteria' => 'Cafeteria DKG 6, UUM',
         ]);
 

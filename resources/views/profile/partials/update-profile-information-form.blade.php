@@ -66,7 +66,10 @@
                 @foreach(['Vegan', 'Halal', 'Nut-Free', 'Gluten-Free', 'Low-Carb'] as $tag)
                     @php
                         $userTags = $user->active_dietary_tags ?? [];
-                        $isChecked = in_array($tag, $userTags);
+                        if (is_string($userTags)) {
+                            $userTags = json_decode($userTags, true) ?? [];
+                        }
+                        $isChecked = is_array($userTags) && in_array($tag, $userTags);
                     @endphp
                     <label class="inline-flex items-center">
                         <input type="checkbox" name="active_dietary_tags[]" value="{{ $tag }}" {{ $isChecked ? 'checked' : '' }} class="rounded border-gray-300 text-primary focus:ring-primary">
