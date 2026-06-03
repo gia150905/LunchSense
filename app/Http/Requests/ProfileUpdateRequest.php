@@ -27,7 +27,7 @@ class ProfileUpdateRequest extends FormRequest
                 Rule::unique(User::class)->ignore($this->user()->id),
             ],
             'active_dietary_tags' => ['nullable', 'array'],
-            'favorite_cafeteria' => ['nullable', 'string', 'max:255'],
+            'favorite_cafeteria' => ['required', 'string', 'max:255'],
         ];
     }
 }

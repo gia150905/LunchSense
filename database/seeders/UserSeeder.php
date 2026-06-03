@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
             'role' => 'student',
             'wallet_balance' => 142.50,
             'active_dietary_tags' => ['Halal', 'Gluten-Free'],
-            'favorite_cafeteria' => 'Cafeteria DKG 6, UUM',
+            'favorite_cafeteria' => 'DKG 6',
         ]);
 
         User::create([

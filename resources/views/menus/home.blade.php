@@ -26,7 +26,11 @@
             
             <div class="relative z-10">
                 <p class="text-white/80 text-xs font-bold uppercase tracking-wider">Welcome back</p>
-                <h2 class="text-2xl font-black mt-1">Good Afternoon, {{ explode(' ', Auth::user()->name)[0] }}! 👋</h2>
+                @php
+                    $displayName = preg_replace('/^(Student|Staff|Admin)\s+/i', '', Auth::user()->name);
+                    $firstWord = explode(' ', $displayName)[0];
+                @endphp
+                <h2 class="text-2xl font-black mt-1">Good Afternoon, {{ $firstWord }}! 👋</h2>
                 <p class="text-white/90 text-sm mt-2 font-medium">Ready for lunch? Your current digital wallet balance is <strong class="font-extrabold">RM {{ number_format(Auth::user()->wallet_balance, 2) }}</strong>.</p>
                 <div class="mt-4 flex gap-2">
                     <a href="{{ route('wallet.topup') }}" class="bg-white text-primary font-black text-xs px-4 py-2 rounded-xl hover:bg-white/90 transition shadow-sm">Top Up Wallet</a>
